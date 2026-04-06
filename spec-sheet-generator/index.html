@@ -19,16 +19,9 @@
 
     <header class="app-header">
       <div class="header-inner">
-        <div class="logo-mark">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-            <rect width="12" height="12" rx="2" fill="#6C63FF"/>
-            <rect x="16" width="12" height="12" rx="2" fill="#A78BFA"/>
-            <rect y="16" width="12" height="12" rx="2" fill="#A78BFA"/>
-            <rect x="16" y="16" width="12" height="12" rx="2" fill="#6C63FF"/>
-          </svg>
-        </div>
+        <div class="logo-mark"></div>
         <div class="header-text">
-          <h1 class="app-title">Print Spec Generator</h1>
+          <h1 class="app-title">Print Spec<br>Generator</h1>
           <p class="app-subtitle">Spreadsheet → Formatted PPTX</p>
         </div>
       </div>
@@ -41,23 +34,23 @@
 
         <!-- Step 01: Upload -->
         <section class="step-card" id="step-upload">
-          <div class="step-label"><span class="step-num">01</span> Upload Spreadsheet</div>
+          <div class="step-label"><span class="step-num">01</span> Source File</div>
           <div class="dropzone" id="dropzone">
             <div class="dropzone-icon">
-              <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-                <path d="M20 8L20 28M20 8L14 14M20 8L26 14" stroke="#6C63FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M8 30H32" stroke="#6C63FF" stroke-width="2.5" stroke-linecap="round"/>
+              <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
+                <path d="M20 8L20 28M20 8L14 14M20 8L26 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 30H32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </div>
-            <p class="dropzone-title">Drop spreadsheet here</p>
+            <p class="dropzone-title">No File</p>
             <p class="dropzone-sub">.xlsx · .xls · .csv</p>
-            <label class="btn-upload" for="file-input">Choose File</label>
+            <label class="btn-upload" for="file-input">Upload</label>
             <input type="file" id="file-input" hidden />
           </div>
           <div class="file-badge" id="file-badge" style="display:none;">
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
-              <path d="M3 2h7l4 4v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="#6C63FF" stroke-width="1.4"/>
-              <path d="M10 2v4h4" stroke="#6C63FF" stroke-width="1.4"/>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path d="M3 2h7l4 4v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M10 2v4h4" stroke="currentColor" stroke-width="1.4"/>
             </svg>
             <span id="file-name-display"></span>
             <button class="btn-clear" id="btn-clear-file" title="Remove">×</button>
@@ -70,7 +63,7 @@
           <div class="info-fields">
             <div class="info-field info-full">
               <label class="info-label" for="f-meta">Header Line</label>
-              <input class="info-input" id="f-meta" type="text" placeholder="Google // AIFE // April 12 // Washington Hotel // Lead Designer: LT" />
+              <input class="info-input" id="f-meta" type="text" placeholder="Google // AIFE // April 12" />
             </div>
             <div class="info-field">
               <label class="info-label" for="f-logo-text">Logo Text</label>
@@ -84,10 +77,10 @@
               </div>
             </div>
             <div class="info-field info-full">
-              <label class="info-label">Logo Image <span class="info-opt">(optional — overrides text)</span></label>
+              <label class="info-label">Logo Image <span class="info-opt">(optional)</span></label>
               <div class="logo-upload-strip" id="logo-upload-strip">
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 2h7l4 4v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="#8b8aad" stroke-width="1.4"/>
+                  <path d="M3 2h7l4 4v9a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" stroke="currentColor" stroke-width="1.4"/>
                 </svg>
                 <span id="logo-upload-text">Click to upload PNG / SVG</span>
                 <input type="file" id="logo-file-input" accept="image/*" hidden />
@@ -102,18 +95,18 @@
       <section class="step-card hidden" id="step-mapping">
         <button class="mapping-toggle" id="mapping-toggle" aria-expanded="false">
           <span class="mapping-toggle-left">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <circle cx="7" cy="7" r="6" stroke="#6C63FF" stroke-width="1.4"/>
-              <path d="M7 4v3l2 1.5" stroke="#6C63FF" stroke-width="1.4" stroke-linecap="round"/>
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+              <circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M7 4v3l2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
             </svg>
             <span id="mapping-status-text">Column mapping applied automatically</span>
           </span>
-          <span class="mapping-toggle-right" id="mapping-toggle-caret">Edit &#9662;</span>
+          <span class="mapping-toggle-right" id="mapping-toggle-caret">Edit →</span>
         </button>
         <div class="mapping-body hidden" id="mapping-body">
-          <p class="step-desc" style="margin-top:16px;">Adjust if any column was incorrectly detected.</p>
+          <p class="step-desc" style="margin-top:14px;">Adjust if any column was incorrectly detected.</p>
           <div class="mapping-grid" id="mapping-grid"></div>
-          <button class="btn-primary" id="btn-apply-mapping">Re-apply Mapping &#8594;</button>
+          <button class="btn-primary" id="btn-apply-mapping">Re-apply Mapping →</button>
         </div>
       </section>
 
@@ -125,7 +118,7 @@
             <select id="line-item-select" class="custom-select">
               <option value="">— Choose a line item —</option>
             </select>
-            <span class="select-arrow">&#9662;</span>
+            <span class="select-arrow">→</span>
           </div>
         </div>
       </section>
@@ -135,32 +128,32 @@
         <div class="step-label"><span class="step-num">04</span> Preview &amp; Export</div>
         <div class="preview-shell">
           <div class="preview-toolbar">
-            <span class="preview-label">SLIDE PREVIEW</span>
+            <span class="preview-label">Slide Preview</span>
             <div class="toolbar-actions">
               <label class="btn-artwork-upload" id="artwork-upload-btn" for="artwork-file-input">
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
                   <path d="M2 11l3-4 3 3 2-2 4 5H2z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
                   <circle cx="5" cy="5" r="1.5" stroke="currentColor" stroke-width="1.4"/>
                 </svg>
-                Upload Artwork
+                Artwork
               </label>
               <input type="file" id="artwork-file-input" hidden />
               <button class="btn-download" id="btn-download">
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
                   <path d="M8 2v9M8 11L5 8M8 11L11 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M2 14h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                 </svg>
-                Download PPTX
+                Export PPTX
               </button>
             </div>
           </div>
           <div class="slide-preview" id="slide-preview">
             <div class="slide-empty">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                <rect x="4" y="6" width="24" height="20" rx="2" stroke="#ccc" stroke-width="1.5"/>
-                <line x1="8" y1="12" x2="16" y2="12" stroke="#ccc" stroke-width="1.5"/>
-                <line x1="8" y1="16" x2="20" y2="16" stroke="#ccc" stroke-width="1.5"/>
-                <rect x="17" y="13" width="9" height="9" rx="1" stroke="#ccc" stroke-width="1.5"/>
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+                <rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="8" y1="12" x2="16" y2="12" stroke="currentColor" stroke-width="1.5"/>
+                <line x1="8" y1="16" x2="20" y2="16" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="17" y="13" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.5"/>
               </svg>
               <span>Select a line item to preview</span>
             </div>
@@ -171,22 +164,22 @@
       <!-- Step 05: Batch Export -->
       <section class="step-card hidden" id="step-batch">
         <div class="step-label"><span class="step-num">05</span> Batch Export</div>
-        <p class="step-desc">Drop a folder of artwork files. They'll be matched to line items by filename, converted to PNG, and exported as a ZIP of PPTX files.</p>
+        <p class="step-desc">Drop a folder of artwork files. They'll be matched to line items by filename and exported as PPTX.</p>
 
         <div class="batch-dropzone" id="batch-dropzone">
-          <svg width="32" height="32" viewBox="0 0 40 40" fill="none">
-            <path d="M20 8v20M20 8l-6 6M20 8l6 6" stroke="#6C63FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 30h24" stroke="#6C63FF" stroke-width="2.5" stroke-linecap="round"/>
+          <svg width="28" height="28" viewBox="0 0 40 40" fill="none">
+            <path d="M20 8v20M20 8l-6 6M20 8l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 30h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
-          <p class="dropzone-title" style="font-size:0.9rem;">Drop artwork files or folder here</p>
-          <p class="dropzone-sub">PDF &middot; SVG &middot; PNG &middot; JPEG &middot; AI &nbsp;&mdash;&nbsp; EPS will be flagged</p>
+          <p class="dropzone-title" style="font-size:0.82rem;">Drop artwork files here</p>
+          <p class="dropzone-sub">PDF · SVG · PNG · JPEG · AI — EPS will be flagged</p>
           <div class="batch-btn-group">
             <label class="btn-upload" for="batch-file-input">Choose Files</label>
             <label class="btn-upload btn-upload-alt" for="batch-folder-input">
-              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:middle;margin-right:4px;">
+              <svg width="11" height="11" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:middle;margin-right:4px;">
                 <path d="M2 4h4l2 2h6v8H2V4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
               </svg>
-              Choose Folder
+              Folder
             </label>
           </div>
           <input type="file" id="batch-file-input" multiple hidden />
@@ -201,7 +194,7 @@
         <div class="batch-actions hidden" id="batch-actions">
           <span class="batch-summary" id="batch-summary"></span>
           <button class="btn-primary" id="btn-batch-download">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:middle;margin-right:6px;">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" style="display:inline;vertical-align:middle;margin-right:5px;">
               <path d="M8 2v9M8 11L5 8M8 11L11 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M2 14h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
